@@ -8,6 +8,8 @@ import router from './router'
 import store from './store'
 import TopHeader from './components/TopHeader/TopHeader.vue'
 
+import './components/mock/mockServer'
+
 //註冊全局組件
 Vue.component('TopHeader', TopHeader)
 Vue.component(Button.name, Button)
