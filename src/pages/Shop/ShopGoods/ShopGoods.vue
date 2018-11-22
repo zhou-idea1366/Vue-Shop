@@ -34,7 +34,7 @@
                     <span class="old" v-if="food.oldPrice">￥{{food.oldPrice}}</span>
                   </div>
                   <div class="cartcontrol-wrapper">
-                    CartControl组件
+                    <CartControl :food="food"/>
                   </div>
                 </div>
               </li>
@@ -43,6 +43,7 @@
           </li>
         </ul>
       </div>
+      <ShopCart/>
     </div>
   </div>
 
@@ -65,6 +66,8 @@
    */
   import BScroll from 'better-scroll'
   import {mapState} from 'vuex'
+  import CartControl from '../../../components/CartControl/CartControl.vue'
+  import ShopCart from '../../../components/ShopCart/ShopCart.vue'
   export default {
     data () {
       return {
@@ -162,6 +165,10 @@
         // 让右侧列表平滑滚动到目标位置
         this.rightScroll.scrollTo(0, y, 500)
       }
+    },
+    components: {
+      CartControl,
+      ShopCart
     }
   }
 
